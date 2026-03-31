@@ -66,11 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Generate GlobalGolf search URL for a club
     function getUsedSearchUrl(club) {
-        const brand = club.Manufacturer;
         const model = club["Model Name"] || club["Model"];
-        const type = categorySearchTerms[currentCategory] || '';
-        const query = encodeURIComponent(`${brand} ${model} ${type}`.trim());
-        return `https://www.globalgolf.com/golf-clubs/?q=${query}`;
+        const query = encodeURIComponent(model.trim());
+        return `https://www.globalgolf.com/search/?term=${query}`;
     }
 
     // Get manufacturer website URL
