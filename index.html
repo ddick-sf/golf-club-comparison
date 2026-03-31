@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NN7THT2Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Club-Spec | Golf Club Comparison Tool</title>
+    <meta name="description" content="Compare Drivers, Fairways, and Irons side-by-side with live specs.">
+
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Simple SEO & OpenGraph -->
+    <meta property="og:title" content="ClubSpec Compare">
+    <meta property="og:description" content="Side-by-side golf club specification comparison.">
+    <meta name="theme-color" content="#05070a">
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NN7THT2Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>CLUB-SPEC</h1>
+        <div class="subtitle">Precision golf equipment comparison. Select a category to begin comparing live
+            specifications.</div>
+    </header>
+
+    <main>
+        <section class="controls animate-in">
+            <div class="selector-container">
+                <label for="club-type">Equipment Category</label>
+                <select id="club-type">
+                    <option value="" disabled selected>Select Category...</option>
+                    <option value="Drivers">Drivers</option>
+                    <option value="Fairways">Fairway Woods</option>
+                    <option value="Irons">Irons</option>
+                    <option value="Wedges">Wedges</option>
+                </select>
+            </div>
+        </section>
+
+        <div class="mobile-info animate-in">↔ Swipe right to see comparison ↔</div>
+
+        <div class="comparison-wrapper animate-in" id="compare-grid" style="display: none;">
+            <div class="compare-grid">
+                <div class="grid-row header-row" id="header-row">
+                    <div class="grid-cell label-cell">
+                        <!-- Top left corner empty or Category Title -->
+                    </div>
+
+                    <!-- Column 1 Selectors -->
+                    <div class="grid-cell col-cell" data-col="0">
+                        <div class="selector-group">
+                            <span class="selector-label">Club 01</span>
+                            <select class="brand-select">
+                                <option value="">Brand...</option>
+                            </select>
+                            <select class="model-select" disabled>
+                                <option value="">Model...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 Selectors -->
+                    <div class="grid-cell col-cell" data-col="1">
+                        <div class="selector-group">
+                            <span class="selector-label">Club 02</span>
+                            <select class="brand-select">
+                                <option value="">Brand...</option>
+                            </select>
+                            <select class="model-select" disabled>
+                                <option value="">Model...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 Selectors -->
+                    <div class="grid-cell col-cell" data-col="2">
+                        <div class="selector-group">
+                            <span class="selector-label">Club 03</span>
+                            <select class="brand-select">
+                                <option value="">Brand...</option>
+                            </select>
+                            <select class="model-select" disabled>
+                                <option value="">Model...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="attributes-container">
+                    <!-- Dynamically populated rows -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
