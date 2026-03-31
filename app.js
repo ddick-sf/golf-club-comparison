@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedClubs = [null, null, null];
     
     // Key names that identify the model/brand, plus supabase standard identifiers that shouldn't show as generic attributes
-    const ignoreKeys = ["id", "created_at", "Manufacturer", "Model", "Model Name"];
+    const ignoreKeys = ["id", "created_at", "Manufacturer", "Model", "Model Name", "Year", "Release Year"];
 
     // Helper to extract year from any club record
     function getClubYear(club) {
