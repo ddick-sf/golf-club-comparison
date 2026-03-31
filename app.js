@@ -27,6 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Key names that identify the model/brand, plus supabase standard identifiers that shouldn't show as generic attributes
     const ignoreKeys = ["id", "created_at", "Manufacturer", "Model", "Model Name"];
 
+    // Helper to extract year from any club record
+    function getClubYear(club) {
+        return club["Release Year"] || club["Year"] || "";
+    }
+
+    // Helper to get model display name with year
+    function getModelDisplayName(club) {
+        const name = club["Model Name"] || club["Model"];
+        const year = getClubYear(club);
+        return year ? `${name} (${year})` : name;
+    }
+
     // Setup event listeners
     clubTypeSelect.addEventListener("change", handleCategoryChange);
 
@@ -136,8 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
         models.forEach(m => {
             const modelName = m["Model Name"] || m["Model"];
             const opt = document.createElement("option");
-            opt.value = modelName;
-            opt.textContent = modelName;
+            opt.value = modelName + '||' + getClubYear(m);
+            opt.textContent = getModelDisplayName(m);
             modelSelect.appendChild(opt);
         });
         
@@ -149,9 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!modelValue) {
             selectedClubs[colIndex] = null;
         } else {
+            const [rawModel, rawYear] = modelValue.split('||');
             const data = golfData[currentCategory];
             const colBrand = document.querySelector(`.col-cell[data-col="${colIndex}"] .brand-select`).value;
-            const club = data.find(item => item.Manufacturer === colBrand && (item["Model Name"] === modelValue || item["Model"] === modelValue));
+            const club = data.find(item => item.Manufacturer === colBrand && (item["Model Name"] === rawModel || item["Model"] === rawModel) && getClubYear(item) === rawYear);
             selectedClubs[colIndex] = club || null;
 
             // GTM Event
@@ -188,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const content = club 
                 ? `<div class="club-preview">
                      <div class="club-brand-display">${club.Manufacturer}</div>
-                     <div class="club-name-display">${club["Model Name"] || club["Model"]}</div>
+                     <div class="club-name-display">${getModelDisplayName(club)}</div>
                    </div>`
                 : `<div class="club-preview empty-state">No club selected...</div>`;
             
