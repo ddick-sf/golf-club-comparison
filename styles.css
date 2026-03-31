@@ -293,6 +293,57 @@ select:disabled {
     margin-bottom: 2px;
 }
 
+/* Club action links (Official Site / Shop Used) */
+.club-links {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.club-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.club-link--oem {
+    color: var(--accent-color);
+    background: rgba(56, 189, 248, 0.08);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.club-link--oem:hover {
+    background: rgba(56, 189, 248, 0.18);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.club-link--used {
+    color: var(--success-color);
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.club-link--used:hover {
+    background: rgba(16, 185, 129, 0.18);
+    border-color: var(--success-color);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+}
+
+.club-link svg {
+    flex-shrink: 0;
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(15px); }

@@ -39,6 +39,45 @@ document.addEventListener("DOMContentLoaded", () => {
         return year ? `${name} (${year})` : name;
     }
 
+    // Manufacturer website URLs
+    const manufacturerUrls = {
+        'TaylorMade': 'https://www.taylormadegolf.com',
+        'Callaway': 'https://www.callawaygolf.com',
+        'PING': 'https://ping.com',
+        'Titleist': 'https://www.titleist.com',
+        'Cobra': 'https://www.cobragolf.com',
+        'Mizuno': 'https://mizunogolf.com',
+        'Srixon': 'https://www.srixon.com',
+        'PXG': 'https://www.pxg.com',
+        'Cleveland': 'https://www.clevelandgolf.com',
+        'Sub 70': 'https://www.golfsub70.com',
+        'Takomo': 'https://takomogolf.com',
+        'Vice Golf': 'https://www.vicegolf.com',
+        'Wilson': 'https://www.wilson.com/en-us/golf'
+    };
+
+    // Category to search term for used club sites
+    const categorySearchTerms = {
+        'Drivers': 'driver',
+        'Fairways': 'fairway wood',
+        'Irons': 'irons',
+        'Wedges': 'wedge'
+    };
+
+    // Generate GlobalGolf search URL for a club
+    function getUsedSearchUrl(club) {
+        const brand = club.Manufacturer;
+        const model = club["Model Name"] || club["Model"];
+        const type = categorySearchTerms[currentCategory] || '';
+        const query = encodeURIComponent(`${brand} ${model} ${type}`.trim());
+        return `https://www.globalgolf.com/golf-clubs/?q=${query}`;
+    }
+
+    // Get manufacturer website URL
+    function getManufacturerUrl(club) {
+        return manufacturerUrls[club.Manufacturer] || '#';
+    }
+
     // Setup event listeners
     clubTypeSelect.addEventListener("change", handleCategoryChange);
 
@@ -202,6 +241,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? `<div class="club-preview">
                      <div class="club-brand-display">${club.Manufacturer}</div>
                      <div class="club-name-display">${getModelDisplayName(club)}</div>
+                     <div class="club-links">
+                       <a href="${getManufacturerUrl(club)}" target="_blank" rel="noopener noreferrer" class="club-link club-link--oem" title="Visit ${club.Manufacturer}">
+                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                         Official Site
+                       </a>
+                       <a href="${getUsedSearchUrl(club)}" target="_blank" rel="noopener noreferrer" class="club-link club-link--used" title="Shop used on GlobalGolf">
+                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                         Shop Used
+                       </a>
+                     </div>
                    </div>`
                 : `<div class="club-preview empty-state">No club selected...</div>`;
             
