@@ -228,6 +228,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const keys = getAttributeKeys();
         attributesContainer.innerHTML = "";
 
+        // === DESKTOP: Horizontal comparison grid ===
+        const desktopGrid = document.createElement("div");
+        desktopGrid.className = "desktop-grid";
+
         // First row for nice display (Brand + Model Text)
         const nameRow = document.createElement("div");
         nameRow.className = "grid-row animate-in";
@@ -254,9 +258,9 @@ document.addEventListener("DOMContentLoaded", () => {
             
             nameRow.innerHTML += `<div class="grid-cell" style="border-bottom: 2px solid var(--glass-border);">${content}</div>`;
         }
-        attributesContainer.appendChild(nameRow);
+        desktopGrid.appendChild(nameRow);
 
-        // Now render each attribute
+        // Render each attribute row
         keys.forEach((key, index) => {
             const rowDiv = document.createElement("div");
             rowDiv.className = "grid-row animate-in";
@@ -267,13 +271,87 @@ document.addEventListener("DOMContentLoaded", () => {
             for (let i = 0; i < cols; i++) {
                 const club = selectedClubs[i];
                 const value = club ? club[key] : "-";
-                // Colorize the cell text based on empty state
                 const classStr = club ? "value-cell" : "value-cell empty-state";
                 rowHtml += `<div class="grid-cell"><div class="${classStr}">${value || "-"}</div></div>`;
             }
             
             rowDiv.innerHTML = rowHtml;
-            attributesContainer.appendChild(rowDiv);
+            desktopGrid.appendChild(rowDiv);
         });
+
+        attributesContainer.appendChild(desktopGrid);
+
+        // === MOBILE: Collapsible card view ===
+        const mobileCards = document.createElement("div");
+        mobileCards.className = "mobile-cards";
+
+        const activeClubs = selectedClubs.filter(c => c !== null);
+
+        if (activeClubs.length === 0) {
+            mobileCards.innerHTML = `<div class="mobile-card-empty">Select clubs above to compare</div>`;
+        } else {
+            selectedClubs.forEach((club, i) => {
+                if (!club) return;
+
+                const card = document.createElement("div");
+                card.className = "mobile-card animate-in";
+                card.style.animationDelay = `${i * 100}ms`;
+
+                const cardHeader = document.createElement("div");
+                cardHeader.className = "mobile-card-header";
+                cardHeader.innerHTML = `
+                    <div class="mobile-card-title">
+                        <span class="mobile-card-brand">${club.Manufacturer}</span>
+                        <span class="mobile-card-model">${getModelDisplayName(club)}</span>
+                    </div>
+                    <svg class="mobile-card-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                `;
+
+                const cardBody = document.createElement("div");
+                cardBody.className = "mobile-card-body";
+
+                // Links row
+                cardBody.innerHTML = `
+                    <div class="mobile-card-links">
+                        <a href="${getManufacturerUrl(club)}" target="_blank" rel="noopener noreferrer" class="club-link club-link--oem">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Official Site
+                        </a>
+                        <a href="${getUsedSearchUrl(club)}" target="_blank" rel="noopener noreferrer" class="club-link club-link--used">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                            Shop Used
+                        </a>
+                    </div>
+                `;
+
+                // Attribute rows
+                keys.forEach(key => {
+                    const value = club[key] || "-";
+                    const row = document.createElement("div");
+                    row.className = "mobile-card-row";
+                    row.innerHTML = `
+                        <span class="mobile-card-label">${key}</span>
+                        <span class="mobile-card-value">${value}</span>
+                    `;
+                    cardBody.appendChild(row);
+                });
+
+                // Toggle collapse
+                cardHeader.addEventListener("click", () => {
+                    card.classList.toggle("expanded");
+                });
+
+                // First card starts expanded
+                if (i === selectedClubs.indexOf(selectedClubs.find(c => c !== null))) {
+                    card.classList.add("expanded");
+                }
+
+                card.appendChild(cardHeader);
+                card.appendChild(cardBody);
+                mobileCards.appendChild(card);
+            });
+        }
+
+        attributesContainer.appendChild(mobileCards);
     }
 });
