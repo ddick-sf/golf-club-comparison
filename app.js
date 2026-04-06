@@ -354,4 +354,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
         attributesContainer.appendChild(mobileCards);
     }
+
+    // --- News Feed Logic ---
+    async function fetchNewsFeed() {
+        // We use rss2json API to fetch and parse the feed easily
+        const rssUrl = encodeURIComponent('https://golf.com/category/gear/feed/'); // Gear-specific feed
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+        
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new Error("Network response was not ok");
+            const data = await response.json();
+            
+            if (data.status !== "ok") throw new Error("RSS parsed failed");
+
+            // Render first 4 articles
+            renderNews(data.items.slice(0, 4));
+        } catch (err) {
+            console.error("News fetch error:", err);
+            document.getElementById("rss-container").innerHTML = `<div class="news-card-empty">Unable to load news at this time. Please check back later.</div>`;
+        }
+    }
+
+    function renderNews(items) {
+        const container = document.getElementById("rss-container");
+        container.innerHTML = "";
+        
+        items.forEach((item, index) => {
+            // Some feeds put images in content, others in thumbnail. We try to extract if needed.
+            let imgUrl = item.thumbnail || "";
+            if (!imgUrl) {
+                // Try to find image in description or content
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = item.description || item.content;
+                const imgElement = tempDiv.querySelector("img");
+                if (imgElement && imgElement.src) {
+                    imgUrl = imgElement.src;
+                } else {
+                    // Fallback golf image
+                    imgUrl = "https://images.unsplash.com/photo-1593111774240-d529f12eb4d6?auto=format&fit=crop&q=80&w=600";
+                }
+            }
+
+            // Format date nicely
+            const date = new Date(item.pubDate.replace(' ', 'T')).toLocaleDateString(undefined, { 
+                month: 'short', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
+
+            const card = document.createElement("div");
+            card.className = "news-card animate-in";
+            // Stagger animations
+            card.style.animationDelay = `${index * 150}ms`;
+            
+            card.innerHTML = `
+                <img src="${imgUrl}" alt="Article Thumbnail" class="news-card-img" onerror="this.src='https://images.unsplash.com/photo-1593111774240-d529f12eb4d6?auto=format&fit=crop&q=80&w=600'">
+                <div class="news-card-content">
+                    <span class="news-card-date">${date}</span>
+                    <h3 class="news-card-title" title="${item.title}">${item.title.length > 70 ? item.title.substring(0, 70) + '...' : item.title}</h3>
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-card-link">
+                        Read Article
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // Initialize the News Feed
+    fetchNewsFeed();
 });
