@@ -1,17 +1,23 @@
 :root {
-  --bg-color: #05070a;
-  --surface-bg: rgba(23, 28, 36, 0.7);
-  --surface-border: rgba(255, 255, 255, 0.1);
-  --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --accent-color: #38bdf8;
-  --accent-glow: rgba(56, 189, 248, 0.2);
+  --primary-navy: #101D2D;
+  --accent-neon: #ADFF2F;
+  --neutral-silver: #BDC3C7;
+  --neutral-silver-light: #E0E3E6;
+  --text-white: #FFFFFF;
+
+  --bg-color: var(--neutral-silver-light);
+  --surface-bg: rgba(255, 255, 255, 0.7);
+  --surface-border: rgba(16, 29, 45, 0.1);
+  --text-primary: var(--primary-navy);
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --accent-color: var(--accent-neon);
+  --accent-glow: rgba(173, 255, 47, 0.4);
   --success-color: #10b981;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --glass-bg: rgba(15, 23, 42, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(16, 29, 45, 0.1);
 }
 
 * {
@@ -23,7 +29,7 @@
 
 body {
   font-family: var(--font-family);
-  background: radial-gradient(circle at 50% 0%, #1e293b 0%, #05070a 100%);
+  background: var(--bg-color);
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
@@ -53,7 +59,7 @@ h1 {
   font-size: clamp(2.5rem, 8vw, 4rem);
   letter-spacing: -0.05em;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #4a5568 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -107,9 +113,9 @@ main {
 
 select {
   appearance: none;
-  background-color: #1e293b;
+  background-color: var(--text-white);
   border: 1px solid var(--glass-border);
-  color: #f8fafc;
+  color: var(--primary-navy);
   padding: 12px 48px 12px 20px;
   font-size: 1rem;
   font-weight: 500;
@@ -125,10 +131,10 @@ select {
   width: 100%;
 }
 
-/* Explicitly set option backgrounds to black/dark for all browsers */
+/* Explicitly set option backgrounds */
 select option {
-  background-color: #0f172a; 
-  color: #f8fafc;
+  background-color: var(--text-white); 
+  color: var(--primary-navy);
   padding: 10px;
 }
 
@@ -139,7 +145,7 @@ select option {
 }
 
 select:hover:not(:disabled) {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(16, 29, 45, 0.05);
   border-color: var(--accent-color);
   box-shadow: 0 0 20px var(--accent-glow);
 }
@@ -160,7 +166,7 @@ select:disabled {
   margin-bottom: 2rem;
   border-radius: 24px;
   border: 1px solid var(--glass-border);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 30px -12px rgba(16, 29, 45, 0.15);
   background: var(--glass-bg);
   scrollbar-width: thin;
   scrollbar-color: var(--accent-color) transparent;
@@ -200,7 +206,7 @@ select:disabled {
 }
 
 .grid-row:hover:not(.header-row) {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(16, 29, 45, 0.03);
 }
 
 .grid-row:last-child {
@@ -208,7 +214,7 @@ select:disabled {
 }
 
 .grid-row.header-row {
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   position: sticky;
@@ -233,7 +239,7 @@ select:disabled {
   flex: 0 0 200px;
   font-weight: 600;
   color: var(--text-secondary);
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(16, 29, 45, 0.05);
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -268,14 +274,14 @@ select:disabled {
 .club-name-display {
   font-size: 1.125rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--primary-navy);
   line-height: 1.2;
 }
 
 .value-cell {
   font-size: 1rem;
   font-weight: 500;
-  color: #cbd5e1;
+  color: var(--primary-navy);
   text-align: center;
 }
 
@@ -379,7 +385,7 @@ select:disabled {
     border-radius: 14px;
     margin-bottom: 12px;
     overflow: hidden;
-    background: rgba(15, 23, 42, 0.6);
+    background: var(--surface-bg);
     transition: var(--transition);
 }
 
@@ -391,12 +397,12 @@ select:disabled {
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     transition: background 0.2s ease;
 }
 
 .mobile-card-header:active {
-    background: rgba(56, 189, 248, 0.08);
+    background: rgba(16, 29, 45, 0.05);
 }
 
 .mobile-card-title {
@@ -416,7 +422,7 @@ select:disabled {
 .mobile-card-model {
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--primary-navy);
 }
 
 .mobile-card-chevron {
@@ -459,7 +465,7 @@ select:disabled {
 }
 
 .mobile-card-row:nth-child(even) {
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(16, 29, 45, 0.03);
 }
 
 .mobile-card-label {
@@ -474,7 +480,7 @@ select:disabled {
 .mobile-card-value {
     font-size: 0.85rem;
     font-weight: 500;
-    color: #cbd5e1;
+    color: var(--primary-navy);
     text-align: right;
     flex: 1;
 }

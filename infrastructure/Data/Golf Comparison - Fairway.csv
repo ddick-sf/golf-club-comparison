@@ -1,0 +1,63 @@
+Manufacturer,Year,Model Name,Release Year,Category,CC,Standard Loft,Face Material,Adjustability,Weight System,Weight Range,Cost (MSRP),Stock Length,Swing Weight,Target Player Profile,Spin Profile,Bias,Offset,Left Handed
+Titleist,2026,GT3,2026,Precision,175,"15, 16.5, 18",Forged L-Cup,+/- 1.5,SureFit CG Track,Adjustable,$349,"43.0""",D3,0-10 HCP,Low,Adjustable,None,✓
+Titleist,2026,GT2,2026,High Launch,180,"13.5, 15, 16.5, 18",Forged L-Cup,+/- 1.5,Rear Weight,9g Fixed,$349,"43.0""",D3,All Skill Levels,Mid,Neutral,None,✓
+TaylorMade,2026,Qi4D Tour,2026,Low Spin,175,"15, 18",Titanium/Tungsten,+/- 2.0,50g Sliding Weight,Adjustable,$449,"43.25""",D3,0-5 HCP,Very Low,Adjustable,None,✓
+TaylorMade,2026,Qi4D Core,2026,Versatile,180,"15, 16.5, 18",C300 Maraging,Fixed,Speed Pocket,Fixed,$349,"43.25""",D2,All Skill Levels,Mid,Neutral,None,✓
+PING,2026,G440 MAX,2026,All-Around,174,"15, 18, 21",Maraging Steel,+/- 1.5,Tungsten Rear Weight,Fixed,$349,"43.0""",D2,All Skill Levels,Mid,Neutral,None,✓
+PING,2026,G440 LST,2026,Low Spin,165,15,Titanium/Tungsten,+/- 1.5,Tungsten Sole Weight,Fixed,$429,"43.0""",D3,0-5 HCP,Low,Fade Bias,None,✓
+Cobra,2026,OPTM X,2026,Forgiveness,180,"15, 18",H.O.T. Face Steel,+/- 1.5,Rear Weight,Fixed,$329,"43.25""",D2,10+ HCP,Mid,Neutral,None,✓
+Cobra,2026,OPTM LS,2026,Tour Performance,175,"14.5, 17.5",Titanium,+/- 1.5,3-Port System,Adjustable,$379,"43.0""",D3,0-5 HCP,Low,Adjustable,None,✓
+Callaway,2026,Quantum TD,2026,Tour Performance,170,"13.5, 15, 18",Tri-Force Face,+/- 2.0,Front/Back Pods,10g/4g,$349,"43.0""",D3,0-5 HCP,Low,Neutral,None,✓
+Callaway,2026,Quantum Max,2026,Max Launch,185,"15, 18, 21",Tri-Force Face,+/- 2.0,Heel-Biased,Fixed,$349,"43.25""",D2,15+ HCP,Mid-High,Draw Bias,Slight,✓
+Srixon,2025,ZXi Max,2025,Max Forgiveness,180,"15, 18, 21",Ti51AF / Rebound Frame,Fixed,Rear Weight,Fixed,$329,"43.0""",D2,12+ HCP,Mid-High,Draw Bias,Slight,✓
+Srixon,2025,ZXi LS,2025,Low Spin,170,"14.5, 15",Ti51AF Titanium Face,+/- 1.5,Forward CG,Adjustable,$329,"43.0""",D3,0-5 HCP,Low,Neutral/Fade,None,✓
+PING,2025,G440 SFT,2025,Draw Bias,176,"16, 19",Maraging Steel,+/- 1.5,Heel Weight,Fixed,$349,"43.0""",D1,15+ HCP,Mid-High,Draw Bias,Slight,✓
+PING,2025,G440 LST,2025,Low Spin,165,15,Titanium/Tungsten,+/- 1.5,Sole Weight,Fixed,$429,"43.0""",D3,0-8 HCP,Low,Fade Bias,None,✓
+Cobra,2025,DS-Adapt X,2025,All-Around,180,"15, 18",H.O.T. Face / PWR-BRIDGE,+/- 1.5,FutureFit33,Adjustable,$329,"43.25""",D2,All Skill Levels,Mid,Neutral,None,✓
+Cobra,2025,DS-Adapt Max-D,2025,Draw Bias,185,"15.5, 18.5",H.O.T. Face / PWR-BRIDGE,+/- 1.5,FutureFit33 Heel Bias,Adjustable,$329,"43.25""",D1,15+ HCP (Slicer),High,Draw Bias,Moderate,✓
+Cobra,2025,DS-Adapt Max,2025,Maximum Forgiveness,185,"15.5, 18.5, 21.5",H.O.T. Face / PWR-BRIDGE,+/- 1.5,FutureFit33,Adjustable,$329,"43.25""",D2,12+ HCP,Mid-High,Draw Bias,Slight,✓
+Cobra,2025,DS-Adapt LS,2025,Low Spin,175,"14.5, 17.5",Titanium / H.O.T. Face,+/- 1.5,FutureFit33,Adjustable,$379,"43.0""",D3,0-8 HCP,Low,Adjustable,None,✓
+Titleist,2024,GT3,2024,Precision,175,"15, 16.5, 18",Forged L-Cup,+/- 1.5,SureFit CG Track,Adjustable,$349,"43.0""",D3,0-10 HCP,Low,Adjustable,None,✓
+Titleist,2024,GT2,2024,High Launch,180,"13.5, 15, 16.5, 18",Forged L-Cup,+/- 1.5,Rear Weight,Interchangeable,$349,"43.0""",D3,All Skill Levels,Mid,Neutral,None,✓
+TaylorMade,2024,Qi10 Tour,2024,Tour Low Spin,170,"15, 18",Titanium/C300,+/- 2.0,Sliding Weight,Adjustable,$449,"43.0""",D3,0-8 HCP,Low,Adjustable,None,✓
+TaylorMade,2024,Qi10 Max,2024,Maximum Forgiveness,190,"15, 18, 21",C300 Steel,Fixed,Rear CG,Fixed,$349,"43.25""",D2,12+ HCP,Mid-High,Draw Bias,Slight,✓
+TaylorMade,2024,Qi10,2024,All-Around,180,"15, 18, 21",C300 Steel,Fixed,Speed Pocket,Fixed,$349,"43.25""",D2,All Skill Levels,Mid,Neutral,None,✓
+PING,2024,G430 SFT,2024,Draw Bias,176,"16, 19, 22",Maraging Steel,+/- 1.5,Heel Weight,Fixed,$349,"43.0""",D1,15+ HCP,Mid-High,Draw Bias,Slight,✓
+PING,2024,G430 Max 10K,2024,Maximum MOI,174,"15, 18, 21",Maraging Steel,+/- 1.5,Back Weight,Fixed,$349,"43.0""",D2,All Skill Levels,Mid,Neutral,None,✓
+Cobra,2024,Darkspeed Max,2024,Maximum Forgiveness,185,"15, 18, 21",PWRSHELL H.O.T. Face,Fixed,Back Weight,Fixed,$329,"43.25""",D2,12+ HCP,Mid-High,Neutral/Draw,Slight,✓
+Cobra,2024,Darkspeed LS,2024,Low Spin,172,"14.5, 17.5",PWRSHELL H.O.T. Face,+/- 1.5,Forward/Back Weights,Adjustable,$349,"43.0""",D3,0-8 HCP,Low,Neutral/Fade,None,✓
+Callaway,2024,Paradym Ai Smoke Triple Diamond,2024,Tour Low Spin,170,"13.5, 15, 18",Ai Smart Face,+/- 2.0,Front/Back Weights,Adjustable,$449,"43.0""",D3,0-5 HCP,Low,Neutral/Fade,None,No
+Callaway,2024,Paradym Ai Smoke Max D,2024,Draw Bias,185,"15, 18, 21",Ai Smart Face,+/- 2.0,Heel Bias,Fixed,$349,"43.25""",D1,12+ HCP,High,Draw Bias,Slight,✓
+Callaway,2024,Paradym Ai Smoke Max,2024,All-Around,175,"15, 16.5, 18",Ai Smart Face,+/- 2.0,Tungsten Speed Cartridge,Fixed,$349,"43.25""",D2,All Skill Levels,Mid,Neutral,None,✓
+Titleist,2023,TSR3,2023,Tour Performance,175,"13.5, 15, 16.5, 18",Forged Carpenter Steel,+/- 1.5,SureFit CG Track,Adjustable,$349,"43.0""",D3,0-10 HCP,Low,Adjustable,None,✓
+Titleist,2023,TSR2,2023,Speed and Stability,175,"13.5, 15, 16.5, 18, 21",Forged Carpenter Steel,+/- 1.5,Rear Weight,Interchangeable,$349,"43.0""",D3,All Skill Levels,Mid,Neutral,None,✓
+TaylorMade,2023,Stealth 2 Plus,2023,Tour Low Spin,170,"13.5, 15",Titanium/C300,+/- 2.0,Sliding Weight,Adjustable,$449,"43.0""",D3,0-8 HCP,Low,Adjustable,None,✓
+TaylorMade,2023,Stealth 2,2023,Distance,185,"15, 16.5, 18, 21",3D Carbon Crown / C300 Face,Fixed,Inverted Cone + Speed Pocket,Fixed,$349,"43.25""",D2,All Skill Levels,Mid,Neutral,None,✓
+PING,2023,G430 Max,2023,All-Around,174,"15, 18, 21",Maraging Steel,+/- 1.5,Back Weight,Fixed,$349,"43.0""",D2,All Skill Levels,Mid,Neutral,None,✓
+PING,2023,G430 LST,2023,Low Spin,165,15,Maraging Steel,+/- 1.5,Sole Weight,Fixed,$429,"43.0""",D3,0-8 HCP,Low,Fade Bias,None,✓
+Cobra,2023,AeroJet Max,2023,Draw Bias Forgiveness,185,"15, 18, 21",PWRSHELL H.O.T. Face,Fixed,Heel/Back Weight,Fixed,$329,"43.25""",D1,15+ HCP,Mid-High,Draw Bias,Slight,✓
+Cobra,2023,AeroJet LS,2023,Low Spin,170,"14.5, 17.5",PWRSHELL H.O.T. Face,+/- 1.5,Forward/Back Weights,Adjustable,$349,"43.0""",D3,0-8 HCP,Low,Neutral/Fade,None,✓
+Callaway,2023,Paradym X,2023,High Launch Draw,185,"15, 18, 21",Forged Carbon / AI Face,+/- 2.0,Heel Bias,Fixed,$349,"43.25""",D1,12+ HCP,High,Draw Bias,Slight,✓
+Callaway,2023,Paradym,2023,All-Around,175,"15, 16.5, 18, 21",Forged Carbon / AI Face,+/- 2.0,Jailbreak Batwing,Fixed,$349,"43.25""",D2,All Skill Levels,Mid,Neutral,None,✓
+Titleist,2022,TSR3,2022,Precision,175,"15, 16.5, 18",Forged Carpenter Steel,+/- 1.5,SureFit CG Track,Adjustable,$349,"43.0""",D3,0-10 HCP,Low,Adjustable,None,✓
+TaylorMade,2022,Stealth,2022,Distance,185,"15, 18, 21",C300 Steel,Fixed,V Steel Sole,Fixed,$329,"43.25""",D2,5-20 HCP,Mid,Neutral,None,✓
+PING,2022,G425 Max,2022,All-Around,176,"14.5, 17.5, 20.5",Maraging Steel,+/- 1.5,Back Weight,Fixed,$299,"43.0""",D2,All Skill Levels,Mid,Neutral,None,✓
+PING,2022,G425 LST,2022,Low Spin,167,14.5,Maraging Steel,+/- 1.5,Compact CG,Fixed,$399,"43.0""",D3,0-8 HCP,Low,Fade Bias,None,✓
+Cobra,2022,LTDx Max,2022,Maximum Forgiveness,180,"15, 18, 21",H.O.T. Face,+/- 1.5,Rear Weight,Fixed,$299,"43.25""",D2,12+ HCP,Mid-High,Draw Bias,Slight,✓
+Cobra,2022,LTDx LS,2022,Low Spin,170,"14.5, 17.5",H.O.T. Face,+/- 1.5,Front/Back Weights,Adjustable,$299,"43.0""",D3,0-8 HCP,Low,Neutral/Fade,None,✓
+Cobra,2022,Air-X,2022,Lightweight Draw,185,"16, 19, 22",H.O.T. Face,Fixed,Lightweight Build,Fixed,$249,"43.25""",D0,15+ HCP (Slow Swing),High,Draw Bias,Moderate,✓
+Callaway,2022,Rogue ST Max,2022,Forgiveness,180,"15, 18, 21",A.I. Face Cup,+/- 2.0,Tungsten Speed Cartridge,Fixed,$329,"43.25""",D2,All Skill Levels,Mid-High,Neutral,Slight,✓
+Titleist,2021,TSi2,2021,Forgiveness,175,"13.5, 15, 16.5, 18, 21",ATI 425 Face,+/- 1.5,Rear Weight,Interchangeable,$299,"43.0""",D3,All Skill Levels,Mid,Neutral,None,✓
+TaylorMade,2021,SIM2 Max,2021,Forgiveness,190,"15, 18, 21",C300 Steel,Fixed,V Steel + Thru-Slot,Fixed,$299,"43.25""",D2,10+ HCP,Mid-High,Slight Draw,Slight,✓
+PING,2021,G425 SFT,2021,Draw Bias,180,"16, 19, 22",Maraging Steel,+/- 1.5,Heel Bias,Fixed,$299,"43.0""",D1,15+ HCP,Mid-High,Draw Bias,Slight,✓
+PING,2021,G425 Max,2021,All-Around,176,"14.5, 17.5, 20.5",Maraging Steel,+/- 1.5,Back Weight,Fixed,$299,"43.0""",D2,All Skill Levels,Mid,Neutral,None,✓
+Cobra,2021,RADSpeed XB,2021,Forgiveness,180,"15, 18, 21",CNC Infinity Face,Fixed,Rear Weight,Fixed,$249,"43.25""",D2,10+ HCP,Mid-High,Neutral,Slight,✓
+Cobra,2021,RADSpeed,2021,All-Around,174,"14.5, 17.5",CNC Infinity Face,+/- 1.5,Front/Back Weight,Adjustable,$279,"43.25""",D2,All Skill Levels,Mid,Neutral,None,✓
+Callaway,2021,Epic Speed,2021,Distance,173,"15, 18",Flash Face SS21,+/- 2.0,Jailbreak AI Velocity,Fixed,$299,"43.25""",D2,5-15 HCP,Mid-Low,Neutral,None,✓
+Titleist,2020,TSi3,2020,Tour Performance,175,"13.5, 15, 16.5",ATI 425 Face,+/- 1.5,SureFit CG Track,Adjustable,$299,"43.0""",D3,0-8 HCP,Low,Adjustable,None,✓
+TaylorMade,2020,SIM Max,2020,Forgiveness,190,"15, 19, 22",C300 Steel,Fixed,V Steel Sole,Fixed,$299,"43.25""",D2,10+ HCP,Mid-High,Slight Draw,Slight,✓
+PING,2020,G410 SFT,2020,Draw Bias,180,"16, 19, 22",Maraging Steel,+/- 1.0,Heel Bias,Fixed,$299,"43.0""",D1,15+ HCP,Mid-High,Draw Bias,Slight,✓
+PING,2020,G410 Plus,2020,All-Around,176,"14.5, 17.5, 20.5",Maraging Steel,+/- 1.0,Fixed Back Weight,Fixed,$299,"43.0""",D2,All Skill Levels,Mid,Neutral,None,✓
+Cobra,2020,SpeedZone Tour,2020,Low Spin,170,"14.5, 17.5",CNC Milled Face,+/- 1.5,Forward/Back Weight,Adjustable,$279,"43.0""",D3,0-8 HCP,Low,Neutral/Fade,None,✓
+Cobra,2020,SpeedZone,2020,All-Around,174,"14.5, 17.5",CNC Milled Face,+/- 1.5,Front/Back Weight,Adjustable,$249,"43.25""",D2,All Skill Levels,Mid,Neutral,None,✓
+Callaway,2020,Mavrik,2020,Distance,174,"15, 18",Flash Face SS20,+/- 2.0,Fixed Sole Weight,Fixed,$299,"43.25""",D2,5-15 HCP,Mid,Neutral,None,✓
