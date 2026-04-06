@@ -28,6 +28,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- TomSelect for searchable dropdowns -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -52,15 +56,21 @@
 
     <main>
         <section class="controls animate-in">
-            <div class="selector-container">
-                <label for="club-type">Equipment Category</label>
-                <select id="club-type">
-                    <option value="" disabled selected>Select Category...</option>
-                    <option value="Drivers">Drivers</option>
-                    <option value="Fairways">Fairway Woods</option>
-                    <option value="Irons">Irons</option>
-                    <option value="Wedges">Wedges</option>
-                </select>
+            <div class="controls-actions">
+                <div class="selector-container">
+                    <label for="club-type">Equipment Category</label>
+                    <select id="club-type">
+                        <option value="" disabled selected>Select Category...</option>
+                        <option value="Drivers">Drivers</option>
+                        <option value="Fairways">Fairway Woods</option>
+                        <option value="Irons">Irons</option>
+                        <option value="Wedges">Wedges</option>
+                    </select>
+                </div>
+                <button id="share-link-btn" class="share-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    <span>Share Comparison</span>
+                </button>
             </div>
         </section>
 
@@ -77,10 +87,10 @@
                     <div class="grid-cell col-cell" data-col="0">
                         <div class="selector-group">
                             <span class="selector-label">Club 01</span>
-                            <select class="brand-select">
+                            <select class="brand-select" placeholder="Brand...">
                                 <option value="">Brand...</option>
                             </select>
-                            <select class="model-select" disabled>
+                            <select class="model-select" placeholder="Model..." disabled>
                                 <option value="">Model...</option>
                             </select>
                         </div>
@@ -90,10 +100,10 @@
                     <div class="grid-cell col-cell" data-col="1">
                         <div class="selector-group">
                             <span class="selector-label">Club 02</span>
-                            <select class="brand-select">
+                            <select class="brand-select" placeholder="Brand...">
                                 <option value="">Brand...</option>
                             </select>
-                            <select class="model-select" disabled>
+                            <select class="model-select" placeholder="Model..." disabled>
                                 <option value="">Model...</option>
                             </select>
                         </div>
@@ -103,10 +113,10 @@
                     <div class="grid-cell col-cell" data-col="2">
                         <div class="selector-group">
                             <span class="selector-label">Club 03</span>
-                            <select class="brand-select">
+                            <select class="brand-select" placeholder="Brand...">
                                 <option value="">Brand...</option>
                             </select>
-                            <select class="model-select" disabled>
+                            <select class="model-select" placeholder="Model..." disabled>
                                 <option value="">Model...</option>
                             </select>
                         </div>
@@ -118,6 +128,24 @@
                 </div>
             </div>
         </div>
+
+        <section class="trending-comparisons animate-in" id="trending-section">
+            <h2>Trending Comparisons</h2>
+            <div class="trending-grid">
+                <div class="trending-card" data-category="Drivers" data-c0="TaylorMade||Qi10||2024" data-c1="Callaway||Paradym Ai Smoke Max||2024">
+                    <div class="trending-card-title">2024 Forgiving Drivers</div>
+                    <div class="trending-card-vs">Qi10 <span>vs</span> Ai Smoke Max</div>
+                </div>
+                <div class="trending-card" data-category="Irons" data-c0="Titleist||T100||2023" data-c1="Mizuno||Pro 241||2024">
+                    <div class="trending-card-title">Better Player Blades</div>
+                    <div class="trending-card-vs">T100 <span>vs</span> Pro 241</div>
+                </div>
+                <div class="trending-card" data-category="Drivers" data-c0="PING||G430 MAX||2023" data-c1="Titleist||TSR2||2022">
+                    <div class="trending-card-title">Max Forgiveness</div>
+                    <div class="trending-card-vs">G430 MAX <span>vs</span> TSR2</div>
+                </div>
+            </div>
+        </section>
 
         <section class="news-feed animate-in">
             <h2>Industry & Equipment News</h2>

@@ -106,8 +106,26 @@ main {
 @media (min-width: 768px) {
   .controls {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     padding: 24px 40px;
+  }
+}
+
+.controls-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .controls-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .controls-actions .selector-container {
+    flex: 1;
   }
 }
 
@@ -166,6 +184,38 @@ select:focus {
 select:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+}
+
+/* Share Button */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-navy);
+  color: var(--text-white);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(16, 29, 45, 0.2);
+}
+
+.share-btn:hover {
+  background: #1a2a40;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 29, 45, 0.3);
+}
+
+.share-btn:active {
+  transform: translateY(0);
+}
+
+.share-btn.copied {
+  background: var(--success-color);
 }
 
 /* Comparison Container */
@@ -249,10 +299,14 @@ select:disabled {
   flex: 0 0 200px;
   font-weight: 600;
   color: var(--text-secondary);
-  background-color: rgba(16, 29, 45, 0.05);
+  background-color: var(--glass-bg);
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  border-right: 1px solid var(--glass-border);
 }
 
 .selector-group {
@@ -770,3 +824,98 @@ select:disabled {
   font-weight: 600;
   font-style: italic;
 }
+
+/* ========================================= */
+/* TomSelect Overrides                       */
+/* ========================================= */
+.ts-control {
+    background-color: var(--text-white);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 10px 12px !important;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+.ts-control:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+}
+.ts-dropdown {
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    font-family: var(--font-family);
+    margin-top: 4px;
+    z-index: 50;
+}
+.ts-dropdown .active {
+    background-color: rgba(16, 29, 45, 0.05);
+    color: var(--primary-navy);
+}
+
+/* ========================================= */
+/* Visual Diff Highlighting                  */
+/* ========================================= */
+.diff-highlight {
+    background-color: rgba(173, 255, 47, 0.1) !important;
+}
+.diff-highlight .value-cell {
+    font-weight: 700;
+}
+
+/* ========================================= */
+/* Trending Section                          */
+/* ========================================= */
+.trending-comparisons {
+    background: transparent;
+    margin-bottom: 50px;
+}
+.trending-comparisons h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--primary-navy);
+    padding-left: 10px;
+}
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.trending-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(16, 29, 45, 0.05);
+}
+.trending-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(16, 29, 45, 0.1);
+    border-color: var(--accent-color);
+}
+.trending-card-title {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.trending-card-vs {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+}
+.trending-card-vs span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin: 0 4px;
+}
+
