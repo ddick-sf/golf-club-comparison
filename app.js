@@ -397,6 +397,9 @@ document.addEventListener("DOMContentLoaded", () => {
         items.forEach((item, index) => {
             // Some feeds put images in content, others in thumbnail. We try to extract if needed.
             let imgUrl = item.thumbnail || "";
+            if (!imgUrl && item.enclosure && item.enclosure.link) {
+                imgUrl = item.enclosure.link;
+            }
             if (!imgUrl) {
                 // Try to find image in description or content
                 const tempDiv = document.createElement("div");
