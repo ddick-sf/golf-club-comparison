@@ -64,16 +64,30 @@ document.addEventListener("DOMContentLoaded", () => {
         'Wedges': 'wedge'
     };
 
+    // Helper to append UTM parameters to any external URL
+    function appendUTM(urlString) {
+        if (!urlString || urlString === '#') return urlString;
+        try {
+            const url = new URL(urlString);
+            url.searchParams.set('utm_source', 'clubspec');
+            url.searchParams.set('utm_medium', 'referral');
+            return url.toString();
+        } catch (e) {
+            return urlString;
+        }
+    }
+
     // Generate GlobalGolf search URL for a club
     function getUsedSearchUrl(club) {
         const model = club["Model Name"] || club["Model"];
         const query = encodeURIComponent(model.trim());
-        return `https://www.globalgolf.com/search/?term=${query}`;
+        return appendUTM(`https://www.globalgolf.com/search/?term=${query}`);
     }
 
     // Get manufacturer website URL
     function getManufacturerUrl(club) {
-        return manufacturerUrls[club.Manufacturer] || '#';
+        const url = manufacturerUrls[club.Manufacturer] || '#';
+        return appendUTM(url);
     }
 
     // Setup event listeners
@@ -413,7 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="news-card-content">
                     <span class="news-card-date">${date}</span>
                     <h3 class="news-card-title" title="${item.title}">${item.title.length > 70 ? item.title.substring(0, 70) + '...' : item.title}</h3>
-                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-card-link">
+                    <a href="${appendUTM(item.link)}" target="_blank" rel="noopener noreferrer" class="news-card-link">
                         Read Article
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
