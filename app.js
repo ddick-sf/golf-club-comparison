@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Drivers": [],
         "Fairways": [],
         "Irons": [],
-        "Wedges": []
+        "Wedges": [],
+        "Hybrids": []
     };
 
     // We have 3 columns to compare
@@ -109,7 +110,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Share Button Event
     if (shareBtn) {
         shareBtn.addEventListener("click", () => {
-            navigator.clipboard.writeText(window.location.href).then(() => {
+            const shareUrl = new URL(window.location.href);
+            shareUrl.searchParams.set('utm_source', 'user_share');
+            shareUrl.searchParams.set('utm_medium', 'copy_link');
+            shareUrl.searchParams.set('utm_campaign', 'comparison_share');
+            
+            navigator.clipboard.writeText(shareUrl.toString()).then(() => {
                 const originalText = shareBtn.innerHTML;
                 shareBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
                 shareBtn.classList.add("copied");
