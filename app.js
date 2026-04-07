@@ -527,4 +527,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
+    // --- Cookie Consent Logic ---
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    
+    if (cookieBanner && acceptBtn) {
+        if (!localStorage.getItem("clubspec_cookie_consent")) {
+            // Slight delay so it drops in naturally
+            setTimeout(() => {
+                cookieBanner.style.display = "flex";
+                cookieBanner.classList.add("animate-in");
+            }, 1000);
+        }
+        
+        acceptBtn.addEventListener("click", () => {
+            localStorage.setItem("clubspec_cookie_consent", "true");
+            cookieBanner.style.display = "none";
+        });
+    }
+
 });

@@ -195,9 +195,37 @@
         </section>
     </main>
 
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="CLUB-SPEC Logo">
+                <span>CLUB-SPEC</span>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:contact@clubspec.app">Contact</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; <span id="current-year"></span> Club-Spec. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <p>We use cookies to analyze site traffic and serve targeted advertisements. By continuing to use our site, you consent to our <a href="privacy.html">Privacy Policy</a> and use of cookies.</p>
+        </div>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="cookie-btn">Accept</button>
+        </div>
+    </div>
+
     <!-- Supabase Client -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="app.js"></script>
+    <script>document.getElementById("current-year").textContent = new Date().getFullYear();</script>
 </body>
 
 </html>

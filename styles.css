@@ -947,3 +947,130 @@ select:disabled {
     margin: 0 4px;
 }
 
+/* ========================================= */
+/* Footer Styles                             */
+/* ========================================= */
+.site-footer {
+    background-color: var(--surface-bg);
+    border-top: 1px solid var(--glass-border);
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo img {
+    height: 30px;
+    width: auto;
+}
+
+.footer-logo span {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--primary-navy);
+    letter-spacing: 0.1em;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-navy);
+}
+
+.footer-copyright {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .footer-copyright {
+        width: auto;
+        margin-top: 0;
+        text-align: right;
+    }
+}
+
+/* ========================================= */
+/* Cookie Banner                             */
+/* ========================================= */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: var(--primary-navy);
+    color: var(--text-white);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .cookie-banner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.cookie-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.cookie-content a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.cookie-btn {
+    background: var(--text-white);
+    color: var(--primary-navy);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.cookie-btn:hover {
+    background: var(--accent-color);
+    color: var(--text-white);
+}
